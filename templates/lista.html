@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Lista de Tarefas</h1>
+        
+        <form action="{{ url_for('adicionar_tarefa') }}" method="post" class="mb-8">
+            <div class="flex">
+                <input type="text" name="descricao" placeholder="Nova tarefa" required
+                       class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-l-lg focus:outline-none focus:border-blue-500">
+                <button type="submit"
+                        class="px-4 py-2 text-white bg-blue-500 rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    Adicionar
+                </button>
+            </div>
+        </form>
+
+        <ul class="space-y-4">
+            {% for tarefa in tarefas %}
+            <li class="flex items-center justify-between bg-white p-4 rounded-lg shadow">
+                <span class="{% if tarefa.completa %}line-through text-gray-500{% else %}text-gray-800{% endif %}">
+                    {{ tarefa.descricao }}
+                </span>
+                <div class="space-x-2">
+                    <a href="{{ url_for('completar_tarefa', id=tarefa.id) }}"
+                       class="px-3 py-1 text-sm text-white bg-green-500 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                        {{ 'Desmarcar' if tarefa.completa else 'Completar' }}
+                    </a>
+                    <a href="{{ url_for('excluir_tarefa', id=tarefa.id) }}"
+                       class="px-3 py-1 text-sm text-white bg-red-500 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                        Excluir
+                    </a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
