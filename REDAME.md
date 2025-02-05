@@ -55,7 +55,7 @@ Este projeto é uma aplicação simples de lista de tarefas desenvolvida como pa
 
 1. Instale as dependências:
 
-- pip install flask flask-sqlalchemy pytest flask-testing
+- pip install flask flask-sqlalchemy
 - python app.py
 - pytest test.py
 
