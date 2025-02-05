@@ -19,7 +19,6 @@ Este projeto é uma aplicação simples de lista de tarefas desenvolvida como pa
 
 - Tailwind CSS: Framework CSS para estilização rápida e responsiva.
 
-- Flask-Testing: Extensão para facilitar testes em aplicações Flask.
 
 ### Python e Flask
 
@@ -55,7 +54,7 @@ Este projeto é uma aplicação simples de lista de tarefas desenvolvida como pa
 
 - pip install flask flask-sqlalchemy
 - python app.py
-- pytest test.py
+
 
 ## Estrutura do Projeto 
 
