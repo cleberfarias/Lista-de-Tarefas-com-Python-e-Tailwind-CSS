@@ -11,6 +11,18 @@ Este projeto é uma aplicação simples de lista de tarefas desenvolvida como pa
 
 ## Aprendizados
 
+## Tecnologias Utilizadas
+
+- Flask: Framework web em Python para desenvolvimento do backend.
+
+- SQLAlchemy: ORM para gerenciamento do banco de dados embarcado na aplicação.
+
+- Tailwind CSS: Framework CSS para estilização rápida e responsiva.
+
+- Pytest: Framework de testes para automação.
+
+- Flask-Testing: Extensão para facilitar testes em aplicações Flask.
+
 ### Python e Flask
 
 - Criação de rotas em Flask
@@ -33,5 +45,30 @@ Este projeto é uma aplicação simples de lista de tarefas desenvolvida como pa
 
 ## Como Executar
 
+## Criando e Ativando o Ambiente Virtual
+
+- python -m venv venv
+# No Windows
+- venv\Scripts\activate
+# No macOS/Linux
+- source venv/bin/activate
+
 1. Instale as dependências:
 
+- pip install flask flask-sqlalchemy pytest flask-testing
+- python app.py
+- pytest test.py
+
+## Estrutura do Projeto 
+
+📂 CRUD
+│-- 📂 instance
+│   ├── tarefas.db  # Banco de dados SQLite
+│-- 📂 templates
+│   ├── lista.html  # Página HTML principal
+│-- 📂 venv  # Ambiente virtual
+│   ├── Scripts/  # Arquivos do ambiente virtual
+│-- app.py  # Código principal da aplicação
+│-- test.py  # Arquivo de testes
+│-- README.md  # Documentação do projeto
+│-- .gitignore  # Arquivos ignorados pelo Git
