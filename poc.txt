@@ -1,0 +1,16 @@
+/rascunho-poc
+  /backend
+    app.py           # Arquivo principal do Flask (API)
+    models.py        # Models do banco de dados (Flask)
+    config.py        # Configurações do Flask (Flask)
+  /frontend
+    /src
+      /assets
+      /components
+        TaskList.vue   # Componente para mostrar a lista de tarefas
+        TaskItem.vue   # Componente para representar uma tarefa
+      /views
+        Home.vue       # Página inicial
+      main.js          # Arquivo principal do Vue.js
+    tailwind.config.js # Configuração do TailwindCSS
+    package.json      # Dependências do Vue.js
