@@ -1,0 +1,44 @@
+/rascunho-poc
+  /backend
+    app.py           # Arquivo principal do Flask (API)
+    models.py        # Models do banco de dados (Flask)
+    config.py        # Configurações do Flask (Flask)
+  /frontend
+    /src
+      /assets
+      /components
+        TaskList.vue   # Componente para mostrar a lista de tarefas
+        TaskItem.vue   # Componente para representar uma tarefa
+      /views
+        Home.vue       # Página inicial
+      main.js          # Arquivo principal do Vue.js
+    tailwind.config.js # Configuração do TailwindCSS
+    package.json      # Dependências do Vue.js
+
+1) Coisas que poderiam ser melhor no backend:
+Banco de dados: Estou usando o SQLite, que é simples e funciona, 
+mas para algo maior ou em produção, o ideal seria usar o PostgreSQL 
+ou MySQL. Mas por enquanto, o SQLite já serve bem.
+
+Validação de dados: Não estou validando nada que o usuário envia. 
+Por exemplo, se o usuário enviar uma tarefa vazia ou com caracteres 
+errados, isso pode dar erro no banco de dados. Então seria legal validar 
+antes de salvar, algo simples como "a tarefa não pode estar vazia".
+
+Mensagens de erro: Se algo der errado, o backend só "quebra" 
+e não dá uma mensagem clara. Seria legal retornar mensagens de erro 
+mais amigáveis, como "Tarefa não encontrada" ou "Erro ao salvar".
+
+2) Coisas que poderiam ser melhor no frontend:
+Interatividade: Quando o frontend está carregando as tarefas, ele não avisa 
+o usuário. Seria legal ter um "loading" simples enquanto as tarefas estão sendo 
+buscadas no backend.
+
+Validação de formulário: No formulário de adicionar tarefas, não tem nenhuma 
+validação. O usuário pode tentar adicionar uma tarefa sem descrição e o sistema 
+não avisa. Um simples "Por favor, preencha a descrição" ajudaria.
+
+Design Responsivo: garantir que seja Responsivo com tailwind.
+
+Gerenciamento de tarefas: As tarefas aparecem, mas a gente não consegue marcar como 
+concluídas ou deletar. Então adicionar botões de interação seria interessante.
